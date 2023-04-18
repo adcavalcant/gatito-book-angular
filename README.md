@@ -1,1 +1,1 @@
-# angular_2_curso
+# Angular: boas práticas em arquiteturas e formulários
