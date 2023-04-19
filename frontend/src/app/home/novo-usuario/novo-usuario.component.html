@@ -48,7 +48,7 @@
     >
     </app-mensagem>
     <app-mensagem
-      *ngIf="novoUsuarioForm.get('userName')?.errors?.['usuarioExiste']"
+      *ngIf="novoUsuarioForm.get('userName')?.errors?.['usuarioExiste ']"
       mensagem="Usuário já existe!"
     >
     </app-mensagem>
@@ -61,6 +61,11 @@
       placeholder="Senha"
       formControlName="password"
     />
+    <app-mensagem
+      *ngIf="novoUsuarioForm.errors?.['senhaIgualUsuario']"
+      mensagem="Senha deve ser diferente do usuário"
+    >
+    </app-mensagem>
   </div>
 
   <button type="submit" class="form-group btn btn-primary btn-block">
