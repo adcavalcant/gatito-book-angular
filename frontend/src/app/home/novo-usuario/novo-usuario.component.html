@@ -1,47 +1,22 @@
 <h4 class="text-center">Registre-se e mostre seu pet para o mundo!</h4>
 
-<form class="form mt-4" (ngSubmit)="criarNovoUsuario()" #loginForm="ngForm">
+<form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
   <div class="form-group">
-    <input
-      placeholder="E-mail"
-      class="form-control"
-      [(ngModel)]="email"
-      name="email"
-      #campoEmail="ngModel"
-      required
-    />
-    <app-mensagem
-      *ngIf="campoEmail.invalid && campoEmail.touched"
-      mensagem="E-mail Obrigatório"
-    ></app-mensagem>
+    <input placeholder="E-mail" class="form-control" formControlName="email" />
   </div>
   <div class="form-group">
     <input
       placeholder="Nome Completo"
       class="form-control"
-      [(ngModel)]="nome"
-      name="nome"
-      #campoNome="ngModel"
-      required
+      formControlName="fullName"
     />
-    <app-mensagem
-      *ngIf="campoNome.invalid && campoNome.touched"
-      mensagem="Nome Obrigatório"
-    ></app-mensagem>
   </div>
   <div class="form-group">
     <input
       placeholder="Usuário"
       class="form-control"
-      [(ngModel)]="usuario"
-      name="usuario"
-      #campoUsuario="ngModel"
-      required
+      formControlName="userName"
     />
-    <app-mensagem
-      *ngIf="campoUsuario.invalid && campoUsuario.touched"
-      mensagem="Usuário Obrigatório"
-    ></app-mensagem>
   </div>
 
   <div class="form-group">
@@ -49,22 +24,11 @@
       type="password"
       class="form-control"
       placeholder="Senha"
-      [(ngModel)]="senha"
-      name="senha"
-      #campoSenha="ngModel"
-      required
+      formControlName="password"
     />
-    <app-mensagem
-      *ngIf="campoSenha.invalid && campoSenha.touched"
-      mensagem="Senha Obrigatória"
-    ></app-mensagem>
   </div>
 
-  <button
-    type="submit"
-    class="form-group btn btn-primary btn-block"
-    [disabled]="loginForm.invalid"
-  >
+  <button type="submit" class="form-group btn btn-primary btn-block">
     Cadastrar
   </button>
 </form>
