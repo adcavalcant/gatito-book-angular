@@ -1,0 +1,28 @@
+header {
+  margin-left: 20px;
+}
+
+.usuario {
+  margin-right: 20px;
+}
+
+.logout {
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.logout:hover {
+  cursor: pointer;
+}
+
+.username {
+  text-decoration: none;
+}
+
+.username:hover {
+  cursor: pointer;
+}
+
+span {
+  margin-right: 20px;
+}
